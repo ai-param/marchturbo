@@ -1,15 +1,19 @@
-import Image, { type ImageProps } from "next/image";
+"use client"
 import { Button } from "@repo/ui/button";
-import styles from "./page.module.css";
-
+import { useRouter } from "next/navigation";
 export default function Home() {
+  const router = useRouter();
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Button appName="web" className={styles.secondary}>
-          Click here
-        </Button>
-      </main>
+    <div>
+      <button onClick={()=>{
+        router.push('/signup');
+      }}>
+        click here to signin
+      </button>
+      <br/>
+      <Button appName="nextJs">
+        click here
+      </Button>
     </div>
   );
 }
